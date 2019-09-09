@@ -18,10 +18,10 @@ class ProgressPrinter:
     def print_progress(self, current_unit=0, pre=''):
         if type(self.units) == float or type(current_unit) == float or self.float_flag:
             self.float_flag = True
-            info_text = '] - Finished {:.2f} {} of {:.2f} {}     '.format(float(current_unit), self.unit_type,
+            info_text = '] - Finished {:.2f} {} of {:.2f} {}  '.format(float(current_unit), self.unit_type,
                                                                           float(self.units), self.unit_type)
         else:
-            info_text = '] - Finished {} {} of {} {}     '.format(current_unit, self.unit_type, self.units,
+            info_text = '] - Finished {} {} of {} {}  '.format(current_unit, self.unit_type, self.units,
                                                                   self.unit_type)
         if self.head != '' and current_unit != 0:
             progress = self.fill * (round(current_unit * self.steps) - 1) + self.head
