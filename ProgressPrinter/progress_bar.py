@@ -3,6 +3,7 @@
    :synopsis: A versatile progress bar for the command line.
 .. moduleauthor:: Yannic Wehner <yannic.wehner@elcapitan.io>
 .. License: MIT
+
 """
 
 import sys
@@ -10,7 +11,7 @@ import sys
 __author__ = "Yannic Wehner <yannic.wehner@elcapitan.io>"
 
 
-class ProgressPrinter:
+class ProgressBar:
     """
     Class that prints a versatile progress bar to the console
     """
@@ -20,22 +21,15 @@ class ProgressPrinter:
         Initializes a ProgressPrinter object.
 
         :param units: The length of the progress to show e.g. 10 for 10 files.
-        :type units:int
         :param unit_type: The type (plural) of the units previously specified e.g. files, bytes. Omitted if not set.
-        :type unit_type:str
         :param length: The length of the progress bar (really... I'm only talking about the bar). Defaults to 50.
-        :type length:int
         :param pre: A string that is printed before the initial empty progress bar is shown. Omitted by default.
-        :type pre:str
         :param post: A string that is printed after the progress bar finished. Omitted by default.
-        :type post:str
         :param fill: The string that is used to fill the body of the advancing progress bar. Defaults to '='.
-        :type fill:str
         :param head: A string that if not emtpy is displayed as the head of the advancing progress bar. Defaults to '>'.
-        :type head:str
         :param empty: A string that is used to fill the empty space that is not filled by the progress bar. Defaults to
         spaces.
-        :type empty:str
+
         """
 
         self.steps = length / units
@@ -56,10 +50,9 @@ class ProgressPrinter:
         to initialize the progress bar to the terminal (show an emtpy progress bar).
 
         :param current_unit: The current progress unit to display in the bar. Defaults to 0.
-        :type current_unit:int
         :param pre: A string that is appended to the console output above the progress bar. Useful to display additional
-        information like file names. Omitted by default.
-        :type pre:str
+         information like file names. Omitted by default.
+
         """
 
         if type(self.units) == float or type(current_unit) == float or self.float_flag:

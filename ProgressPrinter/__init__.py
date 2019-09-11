@@ -1,1 +1,1 @@
-from ProgressPrinter.progress_printer import ProgressPrinter
+from ProgressPrinter.progress_bar import ProgressBar
