@@ -1,0 +1,30 @@
+ProgressPrinter package
+=======================
+
+Submodules
+----------
+
+ProgressPrinter.byte\_progress\_bar module
+------------------------------------------
+
+.. automodule:: ProgressPrinter.byte_progress_bar
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ProgressPrinter.progress\_bar module
+------------------------------------
+
+.. automodule:: ProgressPrinter.progress_bar
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: ProgressPrinter
+   :members:
+   :undoc-members:
+   :show-inheritance:

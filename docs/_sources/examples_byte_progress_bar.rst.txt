@@ -1,0 +1,7 @@
+examples\_byte\_progress\_bar module
+====================================
+
+.. automodule:: examples_byte_progress_bar
+   :members:
+   :undoc-members:
+   :show-inheritance:

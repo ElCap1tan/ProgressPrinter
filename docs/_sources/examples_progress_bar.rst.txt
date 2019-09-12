@@ -1,0 +1,7 @@
+examples\_progress\_bar module
+==============================
+
+.. automodule:: examples_progress_bar
+   :members:
+   :undoc-members:
+   :show-inheritance:

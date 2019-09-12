@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>ProgressPrinter package &#8212; Progress Printer 2019 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="examples_byte_progress_bar module" href="examples_byte_progress_bar.html" />
+    <link rel="prev" title="ProgressPrinter" href="modules.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="progressprinter-package">
+<h1>ProgressPrinter package<a class="headerlink" href="#progressprinter-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-ProgressPrinter.byte_progress_bar">
+<span id="progressprinter-byte-progress-bar-module"></span><h2>ProgressPrinter.byte_progress_bar module<a class="headerlink" href="#module-ProgressPrinter.byte_progress_bar" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-ProgressPrinter.ByteProgressBar"></span><dl class="class">
+<dt id="ProgressPrinter.byte_progress_bar.ByteProgressBar">
+<em class="property">class </em><code class="sig-prename descclassname">ProgressPrinter.byte_progress_bar.</code><code class="sig-name descname">ByteProgressBar</code><span class="sig-paren">(</span><em class="sig-param">byte_size</em>, <em class="sig-param">conversion=&lt;UNITS.AUTO: 5&gt;</em>, <em class="sig-param">length=50</em>, <em class="sig-param">pre=''</em>, <em class="sig-param">post=''</em>, <em class="sig-param">fill='='</em>, <em class="sig-param">head='&gt;'</em>, <em class="sig-param">empty=' '</em><span class="sig-paren">)</span><a class="headerlink" href="#ProgressPrinter.byte_progress_bar.ByteProgressBar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ProgressPrinter.progress_bar.ProgressBar" title="ProgressPrinter.progress_bar.ProgressBar"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProgressPrinter.progress_bar.ProgressBar</span></code></a></p>
+<p>This class extends the base ProgressBar module and adds unit conversion capabilities for working with bytes.</p>
+<p>Initializes a ProgressPrinter object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>byte_size</strong> – The length of the progress to show in bytes</p></li>
+<li><p><strong>conversion</strong> – The unit to convert the bytes to for display. Omit to automatically infer the best unit from
+the byte size. For supported values see the UNITS enum.</p></li>
+<li><p><strong>length</strong> – The length of the progress bar (really… I’m only talking about the bar). Defaults to 50.</p></li>
+<li><p><strong>pre</strong> – A string that is printed before the initial empty progress bar is shown. Omitted by default.</p></li>
+<li><p><strong>post</strong> – A string that is printed after the progress bar finished. Omitted by default.</p></li>
+<li><p><strong>fill</strong> – The string that is used to fill the body of the advancing progress bar. Defaults to ‘=’.</p></li>
+<li><p><strong>head</strong> – A string that if not emtpy is displayed as the head of the advancing progress bar. Defaults to ‘&gt;’.</p></li>
+<li><p><strong>empty</strong> – A string that is used to fill the empty space that is not filled by the progress bar. Defaults to
+spaces.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="ProgressPrinter.byte_progress_bar.ByteProgressBar.POWER_LABELS">
+<code class="sig-name descname">POWER_LABELS</code><em class="property"> = {0: 'B', 1: 'KB', 2: 'MB', 3: 'GB', 4: 'TB'}</em><a class="headerlink" href="#ProgressPrinter.byte_progress_bar.ByteProgressBar.POWER_LABELS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="ProgressPrinter.byte_progress_bar.ByteProgressBar.UNITS">
+<em class="property">class </em><code class="sig-name descname">UNITS</code><a class="headerlink" href="#ProgressPrinter.byte_progress_bar.ByteProgressBar.UNITS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.IntEnum</span></code></p>
+<p>This enum represents the conversion units available to the ByteProgressBar.</p>
+<dl class="attribute">
+<dt id="ProgressPrinter.byte_progress_bar.ByteProgressBar.UNITS.AUTO">
+<code class="sig-name descname">AUTO</code><em class="property"> = 5</em><a class="headerlink" href="#ProgressPrinter.byte_progress_bar.ByteProgressBar.UNITS.AUTO" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ProgressPrinter.byte_progress_bar.ByteProgressBar.UNITS.BYTES">
+<code class="sig-name descname">BYTES</code><em class="property"> = 0</em><a class="headerlink" href="#ProgressPrinter.byte_progress_bar.ByteProgressBar.UNITS.BYTES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ProgressPrinter.byte_progress_bar.ByteProgressBar.UNITS.GIGABYTES">
+<code class="sig-name descname">GIGABYTES</code><em class="property"> = 3</em><a class="headerlink" href="#ProgressPrinter.byte_progress_bar.ByteProgressBar.UNITS.GIGABYTES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ProgressPrinter.byte_progress_bar.ByteProgressBar.UNITS.KILOBYTES">
+<code class="sig-name descname">KILOBYTES</code><em class="property"> = 1</em><a class="headerlink" href="#ProgressPrinter.byte_progress_bar.ByteProgressBar.UNITS.KILOBYTES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ProgressPrinter.byte_progress_bar.ByteProgressBar.UNITS.MEGABYTES">
+<code class="sig-name descname">MEGABYTES</code><em class="property"> = 2</em><a class="headerlink" href="#ProgressPrinter.byte_progress_bar.ByteProgressBar.UNITS.MEGABYTES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ProgressPrinter.byte_progress_bar.ByteProgressBar.UNITS.TERABYTES">
+<code class="sig-name descname">TERABYTES</code><em class="property"> = 4</em><a class="headerlink" href="#ProgressPrinter.byte_progress_bar.ByteProgressBar.UNITS.TERABYTES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="ProgressPrinter.byte_progress_bar.ByteProgressBar.print_progress">
+<code class="sig-name descname">print_progress</code><span class="sig-paren">(</span><em class="sig-param">current_byte=0</em>, <em class="sig-param">pre=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ProgressPrinter.byte_progress_bar.ByteProgressBar.print_progress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to start printing the previously set-up progress bar with the converted values.
+Call without current_byte and pre before starting whatever you want to track with the progress bar
+to initialize the progress bar to the terminal (show an emtpy progress bar).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>current_byte</strong> – The current byte progress to display in the bar. Defaults to 0.</p></li>
+<li><p><strong>pre</strong> – A string that is appended to the console output above the progress bar. Useful to display additional information like file names. Omitted by default.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-ProgressPrinter.progress_bar">
+<span id="progressprinter-progress-bar-module"></span><h2>ProgressPrinter.progress_bar module<a class="headerlink" href="#module-ProgressPrinter.progress_bar" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-ProgressPrinter.ProgressBar"></span><dl class="class">
+<dt id="ProgressPrinter.progress_bar.ProgressBar">
+<em class="property">class </em><code class="sig-prename descclassname">ProgressPrinter.progress_bar.</code><code class="sig-name descname">ProgressBar</code><span class="sig-paren">(</span><em class="sig-param">units</em>, <em class="sig-param">unit_type=''</em>, <em class="sig-param">length=50</em>, <em class="sig-param">pre=''</em>, <em class="sig-param">post=''</em>, <em class="sig-param">fill='='</em>, <em class="sig-param">head='&gt;'</em>, <em class="sig-param">empty=' '</em><span class="sig-paren">)</span><a class="headerlink" href="#ProgressPrinter.progress_bar.ProgressBar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class that prints a versatile progress bar to the console</p>
+<p>Initializes a ProgressBar object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>units</strong> – The length of the progress to show e.g. 10 for 10 files.</p></li>
+<li><p><strong>unit_type</strong> – The type (plural) of the units previously specified e.g. files, bytes. Omitted if not set.</p></li>
+<li><p><strong>length</strong> – The length of the progress bar (really… I’m only talking about the bar). Defaults to 50.</p></li>
+<li><p><strong>pre</strong> – A string that is printed before the initial empty progress bar is shown. Omitted by default.</p></li>
+<li><p><strong>post</strong> – A string that is printed after the progress bar finished. Omitted by default.</p></li>
+<li><p><strong>fill</strong> – The string that is used to fill the body of the advancing progress bar. Defaults to ‘=’.</p></li>
+<li><p><strong>head</strong> – A string that if not emtpy is displayed as the head of the advancing progress bar. Defaults to ‘&gt;’.</p></li>
+<li><p><strong>empty</strong> – A string that is used to fill the empty space that is not filled by the progress bar. Defaults to
+spaces.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="ProgressPrinter.progress_bar.ProgressBar.print_progress">
+<code class="sig-name descname">print_progress</code><span class="sig-paren">(</span><em class="sig-param">current_unit=0</em>, <em class="sig-param">pre=''</em><span class="sig-paren">)</span><a class="headerlink" href="#ProgressPrinter.progress_bar.ProgressBar.print_progress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method to start printing the previously set-up progress bar.
+Call without current_unit and pre before starting whatever you want to track with the progress bar
+to initialize the progress bar to the terminal (show an emtpy progress bar).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>current_unit</strong> – The current progress unit to display in the bar. Defaults to 0.</p></li>
+<li><p><strong>pre</strong> – A string that is appended to the console output above the progress bar. Useful to display additional
+information like file names. Omitted by default.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-ProgressPrinter">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-ProgressPrinter" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Progress Printer</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">ProgressPrinter</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ProgressPrinter package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples_byte_progress_bar.html">examples_byte_progress_bar module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples_progress_bar.html">examples_progress_bar module</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">ProgressPrinter</a><ul>
+      <li>Previous: <a href="modules.html" title="previous chapter">ProgressPrinter</a></li>
+      <li>Next: <a href="examples_byte_progress_bar.html" title="next chapter">examples_byte_progress_bar module</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Yannic Wehner.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/ProgressPrinter.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

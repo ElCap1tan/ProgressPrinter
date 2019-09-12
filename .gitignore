@@ -126,4 +126,4 @@ dmypy.json
 # PyCharm files
 .idea/
 
-Docs/
+_docs/

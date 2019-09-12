@@ -1,5 +1,5 @@
 """
-.. py:module:: ProgressPrinter
+.. py:module:: ProgressPrinter.ProgressBar
    :synopsis: A versatile progress bar for the command line.
 .. moduleauthor:: Yannic Wehner <yannic.wehner@elcapitan.io>
 .. License: MIT
@@ -18,7 +18,7 @@ class ProgressBar:
 
     def __init__(self, units, unit_type='', length=50, pre='', post='', fill='=', head='>', empty=' '):
         """
-        Initializes a ProgressPrinter object.
+        Initializes a ProgressBar object.
 
         :param units: The length of the progress to show e.g. 10 for 10 files.
         :param unit_type: The type (plural) of the units previously specified e.g. files, bytes. Omitted if not set.
@@ -28,7 +28,7 @@ class ProgressBar:
         :param fill: The string that is used to fill the body of the advancing progress bar. Defaults to '='.
         :param head: A string that if not emtpy is displayed as the head of the advancing progress bar. Defaults to '>'.
         :param empty: A string that is used to fill the empty space that is not filled by the progress bar. Defaults to
-        spaces.
+                      spaces.
 
         """
 
@@ -51,7 +51,7 @@ class ProgressBar:
 
         :param current_unit: The current progress unit to display in the bar. Defaults to 0.
         :param pre: A string that is appended to the console output above the progress bar. Useful to display additional
-         information like file names. Omitted by default.
+                    information like file names. Omitted by default.
 
         """
 
