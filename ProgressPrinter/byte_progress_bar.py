@@ -10,6 +10,10 @@ from enum import IntEnum
 
 from ProgressPrinter import ProgressBar
 
+__author__ = "Yannic Wehner <yannic.wehner@elcapitan.io>"
+__version_info__ = (0, 1, 1)
+__version__ = '.'.join(map(str, __version_info__))
+
 
 class ByteProgressBar(ProgressBar):
     """
@@ -31,7 +35,7 @@ class ByteProgressBar(ProgressBar):
 
     def __init__(self, byte_size, conversion=UNITS.AUTO, length=50, pre='', post='', fill='=', head='>', empty=' '):
         """
-        Initializes a ProgressPrinter object.
+        Initializes a ByteProgressBar object.
 
         :param byte_size: The length of the progress to show in bytes
         :param conversion: The unit to convert the bytes to for display. Omit to automatically infer the best unit from

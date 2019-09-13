@@ -9,6 +9,8 @@
 import sys
 
 __author__ = "Yannic Wehner <yannic.wehner@elcapitan.io>"
+__version_info__ = (0, 1, 1)
+__version__ = '.'.join(map(str, __version_info__))
 
 
 class ProgressBar:

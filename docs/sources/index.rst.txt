@@ -5,6 +5,28 @@
 
 Welcome to Progress Printer's documentation!
 ============================================
+.. image:: /_static/ProgressPrinterDemo_v0.1.1.gif
+
+**ProgressPrinter** is a small and simple to use library that helps
+you to print the state of a progressing action (e.g. a file download
+or parsing files line by line) graphically to the console or terminal.
+At the moment only *progress bars* are supported but I plan to add more soon.
+
+*Simple Example:*
+::
+
+   pb = ProgressBar(100, '%', pre='Downloading file', post='Download finished', length=25)
+   pb.print_progress()  # Prints the initial empty progress bar
+   for percent in range(1, 101):
+      pb1.print_progress(percent)
+      sleep(0.15)
+
+*Output:*
+::
+   Downloading file
+   [========================>] - Finished 100 % of 100 %
+   Download finished
+
 
 .. toctree::
    :maxdepth: 2

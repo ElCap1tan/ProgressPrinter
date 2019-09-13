@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from time import sleep
 
 from ProgressPrinter import ProgressBar
@@ -8,35 +10,30 @@ def main():
     Choose which examples to run in this method
     """
 
-    # ex1()
-    # ex2()
-    # ex3()
-    # ex4()
-    # ex5()
+    ex1()
+    ex2()
+    ex3()
+    ex4()
+    ex5()
 
 
 def ex1():
     """
     **Example 1**
-
-    ``pb1 = ProgressBar(100, '%', pre='Downloading file', post='Download finished', length=25)``
-
-    ``pb1.print_progress()  # Prints the initial empty progress bar``
-
-    ``for mb in range(1, 101):``
-
-        ``pb1.print_progress(mb)``
-
-        ``sleep(0.15)``
-
+    ::
+        pb1 = ProgressBar(100, '%', pre='Downloading file', post='Download finished', length=25)
+        pb1.print_progress()  # Prints the initial empty progress bar
+        for mb in range(1, 101):
+            pb1.print_progress(mb)
+            sleep(0.15)
 
     **Output:**
+    ::
+        Downloading file
 
-    ``Downloading file``
+        [========================>] - Finished 100 % of 100 %
 
-    ``[========================>] - Finished 100 % of 100 %``
-
-    ``Download finished``
+        Download finished
 
     """
 
@@ -50,24 +47,18 @@ def ex1():
 def ex2():
     """
     **Example 2**
-
-    ``pb2 = ProgressBar(500, 'MB', pre='Downloading file', post='Download finished', head='#')``
-
-    ``pb2.print_progress()  # Prints the initial empty progress bar``
-
-    ``for mb in range(1, 501):``
-
-        ``pb2.print_progress(mb)``
-
-        ``sleep(0.02)``
+    ::
+        pb2 = ProgressBar(500, 'MB', pre='Downloading file', post='Download finished', head='#')
+        pb2.print_progress()  # Prints the initial empty progress bar``
+        for mb in range(1, 501):
+            pb2.print_progress(mb)
+            sleep(0.02)
 
     **Output:**
-
-    ``Downloading file``
-
-    ``[=================================================#] - Finished 500 MB of 500 MB``
-
-    ``Download finished``
+    ::
+        Downloading file
+        [=================================================#] - Finished 500 MB of 500 MB
+        Download finished
 
     """
 
@@ -81,35 +72,26 @@ def ex2():
 def ex3():
     """
     **Example 3**
+    ::
+        pb3 = ProgressBar(1000.12, 'MB', pre='Downloading file', post='Download finished', length=100)
+        pb3.print_progress()  # Prints the initial empty progress bar
+        for mb in range(1, 1001):
+            if mb != 1000 and mb % 2 == 0:
+                mb = mb + 0.5
+            elif mb != 1000:
+                mb = mb + 0.25
+            else:
+                mb = mb + 0.12
 
-    pb3 = ProgressBar(1000.12, 'MB', pre='Downloading file', post='Download finished', length=100)
-    pb3.print_progress()  # Prints the initial empty progress bar
-    for mb in range(1, 1001):
-
-    if mb != 1000 and mb % 2 == 0:
-
-        mb = mb + 0.5
-
-    elif mb != 1000:
-
-        mb = mb + 0.25
-
-    else:
-
-        mb = mb + 0.12
-
-    pb3.print_progress(mb)
-
-    sleep(0.025)
+            pb3.print_progress(mb)
+            sleep(0.025)
 
 
     **Output:**
-
-    *Downloading file*
-    *[===================================================================================================>]
-    - Finished 1000.12 MB of 1000.12 MB*
-
-    *Download finished*
+    ::
+        Downloading file
+        [===================================================================================================>] - Finished 1000.12 MB of 1000.12 MB
+        Download finished
 
     """
 

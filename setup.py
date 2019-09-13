@@ -1,14 +1,20 @@
 from distutils.core import setup
+
+with open('README.md') as f:
+    long_description = f.read()
+
 setup(
   name='ProgressPrinter',
   packages=['ProgressPrinter'],
-  version='0.1',
+  version='0.1.1',
   license='MIT',
-  description = 'Simple library that allows you to add a progress bar to your console output.',
+  description='Simple library that allows you to add a progress bar to your console output.',
+  long_description=long_description,
+  long_description_content_type='text/markdown',
   author='Yannic Wehner',
   author_email='yannic.wehner@elcapitan.io',
   url='https://github.com/ElCap1tan/ProgressPrinter',
-  download_url='https://github.com/ElCap1tan/ProgressPrinter/archive/v0.1.tar.gz',
+  download_url='https://github.com/ElCap1tan/ProgressPrinter/archive/v0.1.1.tar.gz',
   keywords=['terminal', 'console', 'shell', 'progress bar'],
   install_requires=[],
   classifiers=[

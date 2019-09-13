@@ -1,4 +1,8 @@
-# ProgressBar
+# ProgressPriner
+
+## Progress Bar:
+
+![Code Examples](https://raw.githubusercontent.com/ElCap1tan/ProgressPrinter/master/docs/static/ProgressPrinterDemo_v0.1.1.gif)
 
 ### For the full example see examples.py
 #### This will be edited in the next days to make things clearer.

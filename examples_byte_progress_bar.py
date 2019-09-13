@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import requests
 
 from ProgressPrinter import ByteProgressBar
@@ -12,13 +14,13 @@ def ex1():
     # from bytes, the base unit you will work with most of the time, to KB, MB, etc.
     # This for example is useful when downloading or working with a file (see example below)
     #
-    # UNCOMMENT TO LINK YOU WANT TO USE FOR THE TEST DOWNLOAD
+    # UNCOMMENT THE LINK YOU WANT TO USE FOR THE TEST DOWNLOAD
     # -------------------------------------------------------
     # 100MB.bin [100 MB] - Auto conversion to MB
-    # link = 'https://speed.hetzner.de/100MB.bin'
+    link = 'https://speed.hetzner.de/100MB.bin'
     # -------------------------------------------------------------------------------------------
     # Linux Mint Cinnamon x64.iso [ca. 1.87 GB] - Auto conversion to GB
-    link = 'http://mirrors.evowise.com/linuxmint/stable/19.2/linuxmint-19.2-cinnamon-64bit.iso'
+    # link = 'http://mirrors.evowise.com/linuxmint/stable/19.2/linuxmint-19.2-cinnamon-64bit.iso'
     # -------------------------------------------------------------------------------------------
 
     file_name = link.split('/')[-1]
