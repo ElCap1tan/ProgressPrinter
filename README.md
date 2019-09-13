@@ -1,8 +1,8 @@
-# ProgressPriner
-
-## Progress Bar:
+# ProgressPrinter
 
 ![Code Examples](https://raw.githubusercontent.com/ElCap1tan/ProgressPrinter/master/docs/static/ProgressPrinterDemo_v0.1.1.gif)
+
+## Progress Bar:
 
 ### For the full example see examples_progress_bar.py and examples_byte_progress_bar.py
 #### A first really bare version of a html documentation is available [here](https://elcapitan.io/ProgressPrinter/index.html)
