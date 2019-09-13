@@ -4,14 +4,16 @@
 
 ![Code Examples](https://raw.githubusercontent.com/ElCap1tan/ProgressPrinter/master/docs/static/ProgressPrinterDemo_v0.1.1.gif)
 
-### For the full example see examples.py
+### For the full example see examples_progress_bar.py and examples_byte_progress_bar.py
+#### A first really bare version of a html documentation is available [here](https://elcapitan.io/ProgressPrinter/index.html)
 #### This will be edited in the next days to make things clearer.
+
+### ProgressBar Examples
 
 ```Python
 from time import sleep
-import requests
 
-from ProgressBar import ProgressBar
+from ProgressPrinter import ProgressBar
 ```
 ```Python
 def ex1():
@@ -96,27 +98,48 @@ Line 4
 [=================================================>] - Finished 5 lines of 5 lines
 Finished reading file!
 ```
+
+### ByteProgressBar Example
 ```Python
-def ex6():
-    link = 'https://speed.hetzner.de/100MB.bin'
-    file_name = '100MB.bin'
+import requests
+
+from ProgressPrinter import ByteProgressBar
+
+def ex1():
+    # The ByteProgressBar is a extension of the normal progress bar that supports automatic unit conversion
+    # from bytes, the base unit you will work with most of the time, to KB, MB, etc.
+    # This for example is useful when downloading or working with a file (see example below)
+    #
+    # UNCOMMENT TO LINK YOU WANT TO USE FOR THE TEST DOWNLOAD
+    # -------------------------------------------------------
+    # 100MB.bin [100 MB] - Auto conversion to MB
+    # link = 'https://speed.hetzner.de/100MB.bin'
+    # -------------------------------------------------------------------------------------------
+    # Linux Mint Cinnamon x64.iso [ca. 1.87 GB] - Auto conversion to GB
+    link = 'http://mirrors.evowise.com/linuxmint/stable/19.2/linuxmint-19.2-cinnamon-64bit.iso'
+    # -------------------------------------------------------------------------------------------
+
+    file_name = link.split('/')[-1]
     with open(file_name, 'wb') as f:
         response = requests.get(link, stream=True)
-        total_length = int(response.headers.get('content-length'))
-        if total_length is None:
+        byte_size = int(response.headers.get('content-length'))
+        if byte_size is None:
             f.write(response.content)
         else:
-            pb6 = ProgressBar(total_length, 'Bytes', pre='Downloading {} from {}'.format(file_name, link),
-                                  post='Finished download!')
-            pb6.print_progress()
-            progress = 0
-            for chunk in response.iter_content(chunk_size=int(total_length/100)):
-                progress += len(chunk)
+            # Set to ByteProgressBar.UNITS.AUTO to automatically interfere a fitting unit from the byte size
+            # -----------------------------------------------------------------------------------------------
+            # Supported values: ByteProgressBar.UNITS.{BYTES, KILOBYTES, MEGABYTES, GIGABYTES, TERABYTES, AUTO}
+
+            bpb1 = ByteProgressBar(byte_size, ByteProgressBar.UNITS.AUTO, pre='Downloading {} from {}'
+                                   .format(file_name, link), post='Finished download!')
+            bpb1.print_progress()
+            loaded_bytes = 0
+            for chunk in response.iter_content(chunk_size=1048576):  # 1 MB
+                loaded_bytes += len(chunk)
                 f.write(chunk)
-                pb6.print_progress(progress)
+                bpb1.print_progress(loaded_bytes)
 ```
 ```
-Downloading 100MB.bin from https://speed.hetzner.de/100MB.bin
-[=================================================>] - Finished 104857600 Bytes of 104857600 Bytes  
-Finished download!
+Downloading linuxmint-19.2-cinnamon-64bit.iso from http://mirrors.evowise.com/linuxmint/stable/19.2/linuxmint-19.2-cinnamon-64bit.iso
+[======>                                           ] - Finished 0.27 GB of 1.87 GB
 ```
